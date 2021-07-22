@@ -13,7 +13,7 @@
 
 <script>
 import Column from './components/Column.vue';
-import { mapGetters, mapState } from 'vuex';
+import { mapGetters, mapState, mapMutations } from 'vuex';
 
 export default {
   components: {
@@ -47,11 +47,19 @@ export default {
   },
   computed: {
     ...mapGetters([
-      'getCardList',
+      'getCardList'
     ]),
     ...mapState([
       'cardList'
-    ])
+    ]),
+  },
+  methods: {
+    ...mapMutations([
+      'GET_DATA_FROM_LOCALSTORAGE'
+    ]),
+  },
+  mounted() {
+    this.GET_DATA_FROM_LOCALSTORAGE();
   }
   
 }

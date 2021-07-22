@@ -8,6 +8,7 @@
                 :card-info='card'
                 @click-to-delete='removeCard'
             ></column-card>
+           
         </div>
         <div class='column__footer'>
             <column-button  
